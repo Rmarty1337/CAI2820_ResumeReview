@@ -1,7 +1,7 @@
 import openai
-from config import OPENAI_API_KEY
+import os  
 
-openai.api_key = OPENAI_API_KEY
+openai.api_key = os.getenv("OPENAI_API_KEY")  
 
 def get_resume_feedback(resume_text):
     prompt = f"Review the following resume and suggest 5 improvements focused on grammar, clarity, and formatting:\n\n{resume_text}"
